@@ -9,7 +9,7 @@ class CompleteProfileScreen extends StatefulWidget {
 }
 
 class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
-  final TextEditingController _emailTEController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
