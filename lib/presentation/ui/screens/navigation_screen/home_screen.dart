@@ -1,7 +1,10 @@
 import 'package:craftybay/presentation/ui/utils/assets_path.dart';
 import 'package:craftybay/presentation/ui/widgets/app_bar_icon_button.dart';
 import 'package:craftybay/presentation/ui/widgets/home_banner_slider.dart';
+import 'package:craftybay/presentation/ui/widgets/horizontal_category_list_view.dart';
+import 'package:craftybay/presentation/ui/widgets/horizontal_product_list_view.dart';
 import 'package:craftybay/presentation/ui/widgets/search_bar_text_form_filed.dart';
+import 'package:craftybay/presentation/ui/widgets/section_header.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -26,10 +29,45 @@ class _HomeScreenState extends State<HomeScreen> {
                   textEditingController: TextEditingController()),
               const SizedBox(height: 16),
               const HomeBannerSlider(),
+              const SizedBox(height: 16),
+              _buildCategoriesSection(),
+              const SizedBox(height: 16),
+              _buildProductSection(),
             ],
           ),
         ),
       ),
+    );
+  }
+
+  Widget _buildCategoriesSection() {
+    return Column(
+      children: [
+        SectionHeader(
+          onTap: () {},
+          title: "All Categories",
+        ),
+        const SizedBox(height: 8),
+        const SizedBox(
+          height: 100,
+          child: HorizontalCategoriesListView(),
+        ),
+      ],
+    );
+  }
+  Widget _buildProductSection() {
+    return Column(
+      children: [
+        SectionHeader(
+          onTap: () {},
+          title: "Popular",
+        ),
+        const SizedBox(height: 8),
+        const SizedBox(
+          height: 180,
+          child: HorizontalProductListView(),
+        ),
+      ],
     );
   }
 
@@ -55,5 +93,3 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-
-
