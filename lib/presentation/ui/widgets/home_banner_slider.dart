@@ -28,10 +28,9 @@ class _HomeBannerSliderState extends State<HomeBannerSlider> {
                 return Container(
                     width: MediaQuery.of(context).size.width,
                     margin: const EdgeInsets.symmetric(horizontal: 5.0),
-                    decoration:  BoxDecoration(
-                      color: AppColors.primaryColor,
-                      borderRadius:BorderRadius.circular(8)
-                    ),
+                    decoration: BoxDecoration(
+                        color: AppColors.primaryColor,
+                        borderRadius: BorderRadius.circular(8)),
                     alignment: Alignment.center,
                     child: Text(
                       'text $i',
@@ -50,14 +49,14 @@ class _HomeBannerSliderState extends State<HomeBannerSlider> {
               children: [
                 for (int i = 0; i < 5; i++)
                   Container(
-                    height: 12,
-                    width: 12,
+                    height: 8,
+                    width: 8,
                     margin: const EdgeInsets.only(left: 4),
                     decoration: BoxDecoration(
                       color: value == i
                           ? AppColors.primaryColor
                           : Colors.grey.shade300,
-                      borderRadius: BorderRadius.circular(12),
+                      borderRadius: BorderRadius.circular(8),
                     ),
                   )
               ],
@@ -66,5 +65,11 @@ class _HomeBannerSliderState extends State<HomeBannerSlider> {
         )
       ],
     );
+  }
+
+  @override
+  void dispose() {
+    _selectedIndex.dispose();
+    super.dispose();
   }
 }
