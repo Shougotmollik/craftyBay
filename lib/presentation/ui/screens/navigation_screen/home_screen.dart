@@ -1,3 +1,4 @@
+import 'package:craftybay/presentation/ui/screens/navigation_screen/categories_screen.dart';
 import 'package:craftybay/presentation/ui/utils/assets_path.dart';
 import 'package:craftybay/presentation/ui/widgets/app_bar_icon_button.dart';
 import 'package:craftybay/presentation/ui/widgets/home_banner_slider.dart';
@@ -7,6 +8,7 @@ import 'package:craftybay/presentation/ui/widgets/search_bar_text_form_filed.dar
 import 'package:craftybay/presentation/ui/widgets/section_header.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -33,6 +35,11 @@ class _HomeScreenState extends State<HomeScreen> {
               _buildCategoriesSection(),
               const SizedBox(height: 16),
               _buildProductSection(),
+              const SizedBox(height: 16),
+              _buildSpecialSection(),
+              const SizedBox(height: 16),
+              _buildNewSection(),
+              const SizedBox(height: 16),
             ],
           ),
         ),
@@ -44,7 +51,9 @@ class _HomeScreenState extends State<HomeScreen> {
     return Column(
       children: [
         SectionHeader(
-          onTap: () {},
+          onTap: () {
+            Get.to(() => const CategoriesScreen());
+          },
           title: "All Categories",
         ),
         const SizedBox(height: 8),
@@ -55,12 +64,45 @@ class _HomeScreenState extends State<HomeScreen> {
       ],
     );
   }
+
   Widget _buildProductSection() {
     return Column(
       children: [
         SectionHeader(
           onTap: () {},
           title: "Popular",
+        ),
+        const SizedBox(height: 8),
+        const SizedBox(
+          height: 180,
+          child: HorizontalProductListView(),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildSpecialSection() {
+    return Column(
+      children: [
+        SectionHeader(
+          onTap: () {},
+          title: "Special",
+        ),
+        const SizedBox(height: 8),
+        const SizedBox(
+          height: 180,
+          child: HorizontalProductListView(),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildNewSection() {
+    return Column(
+      children: [
+        SectionHeader(
+          onTap: () {},
+          title: "New",
         ),
         const SizedBox(height: 8),
         const SizedBox(
