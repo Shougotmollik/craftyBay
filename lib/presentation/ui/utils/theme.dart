@@ -8,6 +8,14 @@ class AppTheme {
     progressIndicatorTheme: const ProgressIndicatorThemeData(
       color: AppColors.primaryColor,
     ),
+    appBarTheme:  const AppBarTheme(
+      backgroundColor: Colors.white,
+      titleTextStyle: TextStyle(
+        fontWeight: FontWeight.w500,
+        color: Colors.black54,
+        fontSize: 22,
+      )
+    ),
     textTheme: const TextTheme(
       headlineLarge: TextStyle(fontSize: 32, fontWeight: FontWeight.w600),
     ),
