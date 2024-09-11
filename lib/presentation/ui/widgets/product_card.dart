@@ -1,4 +1,3 @@
-
 import 'package:craftybay/presentation/ui/utils/assets_path.dart';
 import 'package:craftybay/presentation/ui/utils/colors.dart';
 import 'package:flutter/material.dart';
@@ -14,12 +13,12 @@ class ProductCard extends StatelessWidget {
       color: Colors.white,
       elevation: 3,
       child: SizedBox(
-        width: 160,
+        width: 140,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              width: 160,
+              width: 140,
               height: 100,
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
