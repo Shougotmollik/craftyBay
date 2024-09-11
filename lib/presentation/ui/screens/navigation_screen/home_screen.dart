@@ -1,4 +1,4 @@
-import 'package:craftybay/presentation/ui/screens/navigation_screen/categories_screen.dart';
+import 'package:craftybay/presentation/state_holders/bottom_nav_bar_controller.dart';
 import 'package:craftybay/presentation/ui/utils/assets_path.dart';
 import 'package:craftybay/presentation/ui/widgets/app_bar_icon_button.dart';
 import 'package:craftybay/presentation/ui/widgets/home_banner_slider.dart';
@@ -39,7 +39,6 @@ class _HomeScreenState extends State<HomeScreen> {
               _buildSpecialSection(),
               const SizedBox(height: 16),
               _buildNewSection(),
-              const SizedBox(height: 16),
             ],
           ),
         ),
@@ -52,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
       children: [
         SectionHeader(
           onTap: () {
-            Get.to(() => const CategoriesScreen());
+            Get.find<BottomNavBarController>().changeCategory();
           },
           title: "All Categories",
         ),
