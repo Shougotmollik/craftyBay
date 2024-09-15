@@ -19,7 +19,7 @@ class _ColorPickerState extends State<ColorPicker> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Colors',
+          'Color',
           style: Theme.of(context).textTheme.titleMedium,
         ),
         const SizedBox(height: 8),
