@@ -2,6 +2,7 @@ import 'package:craftybay/presentation/ui/utils/colors.dart';
 import 'package:craftybay/presentation/ui/widgets/color_picker.dart';
 import 'package:craftybay/presentation/ui/widgets/increment_decrement_button.dart';
 import 'package:craftybay/presentation/ui/widgets/product_image_slider.dart';
+import 'package:craftybay/presentation/ui/widgets/size_picker.dart';
 import 'package:flutter/material.dart';
 
 class ProductDetailsScreen extends StatefulWidget {
@@ -29,11 +30,29 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                 _buildProductNameAndQuantitySection(),
                 _buildProductReviewSection(),
                 _buildSelectProductColorSection(),
+                const SizedBox(height: 8),
+                _buildSelectProductSizeSection(),
+                Column(
+                  children: [
+                    Text("Description",
+                        style: Theme.of(context).textTheme.titleMedium),
+                    Text('''
+                    A shoe is an item of footwear intended to protect and comfort the human foot. Though the human foot can adapt to varied terrains and climate conditions, it is vulnerable, and shoes provide protection. Form was originally tied to function, but over time, shoes also became fashion items.
+                    '''),
+                  ],
+                )
               ],
             ),
           ),
         ],
       ),
+    );
+  }
+
+  Widget _buildSelectProductSizeSection() {
+    return SizePicker(
+      sizes: const ['S', 'M', 'L', 'XL', 'XXL'],
+      onSizeChange: (String selectedSize) {},
     );
   }
 
