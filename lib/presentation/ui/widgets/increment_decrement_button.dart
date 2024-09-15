@@ -20,9 +20,9 @@ class _IncrementDecrementButtonState extends State<IncrementDecrementButton> {
       color: Colors.white,
       height: 40,
       width: 100,
-      child: Wrap(
-        alignment: WrapAlignment.spaceBetween,
-        crossAxisAlignment: WrapCrossAlignment.center,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
             height: 35,
