@@ -17,7 +17,7 @@ class CategoryCard extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            padding: const EdgeInsets.all(16),
+            padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
               color: AppColors.primaryColor.withOpacity(0.1),
               borderRadius: BorderRadius.circular(8),
@@ -25,7 +25,7 @@ class CategoryCard extends StatelessWidget {
             child: const Icon(
               Icons.computer,
               color: AppColors.primaryColor,
-              size: 48,
+              size: 42,
             ),
           ),
           const Text(
