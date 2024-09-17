@@ -61,7 +61,7 @@ class ProductCard extends StatelessWidget {
                         const Wrap(
                           crossAxisAlignment: WrapCrossAlignment.center,
                           children: [
-                            Icon(Icons.star, color: Colors.amber),
+                            Icon(Icons.star, color: Colors.amber,size: 16,),
                             Text(
                               '4.8',
                               style: TextStyle(
@@ -75,10 +75,10 @@ class ProductCard extends StatelessWidget {
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(4)),
                           child: const Padding(
-                            padding: EdgeInsets.all(4.0),
+                            padding: EdgeInsets.all(2.0),
                             child: Icon(
                               Icons.favorite_outline_rounded,
-                              size: 16,
+                              size: 12,
                               color: Colors.white,
                             ),
                           ),
