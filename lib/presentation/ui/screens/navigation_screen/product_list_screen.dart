@@ -13,6 +13,7 @@ class ProductListScreen extends StatelessWidget {
         title: Text(categoryName),
       ),
       body: GridView.builder(
+        shrinkWrap: true,
         itemCount: 15,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 3,
