@@ -1,9 +1,11 @@
+import 'package:craftybay/presentation/ui/screens/navigation_screen/review_screen.dart';
 import 'package:craftybay/presentation/ui/utils/colors.dart';
 import 'package:craftybay/presentation/ui/widgets/color_picker.dart';
 import 'package:craftybay/presentation/ui/widgets/increment_decrement_button.dart';
 import 'package:craftybay/presentation/ui/widgets/product_image_slider.dart';
 import 'package:craftybay/presentation/ui/widgets/size_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ProductDetailsScreen extends StatefulWidget {
   const ProductDetailsScreen({super.key});
@@ -33,12 +35,13 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                 const SizedBox(height: 8),
                 _buildSelectProductSizeSection(),
                 Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text("Description",
                         style: Theme.of(context).textTheme.titleMedium),
-                    Text('''
-                    A shoe is an item of footwear intended to protect and comfort the human foot. Though the human foot can adapt to varied terrains and climate conditions, it is vulnerable, and shoes provide protection. Form was originally tied to function, but over time, shoes also became fashion items.
-                    '''),
+                    const SizedBox(height: 8),
+                    const Text(
+                        '''A shoe is an item of footwear intended to protect and comfort the human foot. Though the human foot can adapt to varied terrains and climate conditions, it is vulnerable, and shoes provide protection. Form was originally tied to function, but over time, shoes also became fashion items.A shoe is an item of footwear intended to protect and comfort the human foot. Though the human foot can adapt to varied terrains and climate conditions, it is vulnerable, and shoes provide protection. Form was originally tied to function, but over time, shoes also became fashion items.'''),
                   ],
                 )
               ],
@@ -85,7 +88,9 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
           ],
         ),
         TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Get.to(()=>const ReviewScreen());
+            },
             child: const Text(
               "Reviews",
               style: TextStyle(
