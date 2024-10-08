@@ -1,4 +1,5 @@
 import 'package:craftybay/presentation/state_holders/bottom_nav_bar_controller.dart';
+import 'package:craftybay/presentation/state_holders/slider_list_controller.dart';
 import 'package:craftybay/presentation/ui/utils/assets_path.dart';
 import 'package:craftybay/presentation/ui/widgets/app_bar_icon_button.dart';
 import 'package:craftybay/presentation/ui/widgets/home_banner_slider.dart';
@@ -18,6 +19,12 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  @override
+  void initState() {
+    super.initState();
+    Get.find<SliderListController>().getSliderList();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
