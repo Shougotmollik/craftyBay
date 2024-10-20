@@ -11,13 +11,13 @@
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Usage](#usage)
- - [Screenshots](#screenshots)
-- [API Endpoints](#api-endpoints)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Overview
 CraftyBay is an elegant eCommerce mobile application designed to offer users a smooth and efficient shopping experience. The app allows users to browse products, add items to a shopping cart or wishlist, and make secure purchases. Built using Flutter for the frontend, and leveraging a REST API for backend functionality, CraftyBay ensures a fast, responsive, and scalable platform for online shopping.
+
+![Home Screen](all.png)
+
 
 ## Features
 
@@ -86,15 +86,11 @@ Once the project is set up, you can run it on an Android or iOS device using the
 5. Open a Pull Request and describe the feature you’ve added.
 
 ## 🚀 About Me
-I'm a full stack developer...
+I'm a Mobile App developer... @Shougotmollik
 
 
 ## 🔗 Links
-[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://katherineoelsner.com/)
-[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/)
-[![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/)
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://shougotmollik.github.io/)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/shougotmollik/)
 
-
-## 🛠 Skills
-Javascript, HTML, CSS...
 
