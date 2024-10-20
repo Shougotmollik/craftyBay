@@ -3,6 +3,7 @@ import 'package:craftybay/presentation/state_holders/add_to_cart_controller.dart
 import 'package:craftybay/presentation/state_holders/auth_controller.dart';
 import 'package:craftybay/presentation/state_holders/product_list_contoller.dart';
 import 'package:craftybay/presentation/ui/screens/auth_screen/email_verification_screen.dart';
+import 'package:craftybay/presentation/ui/screens/navigation_screen/review_screen.dart';
 import 'package:craftybay/presentation/ui/utils/colors.dart';
 import 'package:craftybay/presentation/ui/utils/snack_message.dart';
 import 'package:craftybay/presentation/ui/widgets/centered_circular_progress_indicator.dart';
@@ -160,7 +161,9 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
         ),
         const SizedBox(width: 8),
         TextButton(
-          onPressed: () {},
+          onPressed: () {
+            Get.to(() => const ReviewScreen());
+          },
           child: const Text(
             'Reviews',
             style: TextStyle(
