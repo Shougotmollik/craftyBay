@@ -65,7 +65,7 @@ class _ReviewScreenState extends State<ReviewScreen> {
         },
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: AppColors.primaryColor,
+        backgroundColor: AppColors.themeColor,
         shape: const CircleBorder(),
         onPressed: () {
           Get.to(()=>const CreateReviewScreen());

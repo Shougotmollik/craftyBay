@@ -28,7 +28,7 @@ class _IncrementDecrementButtonState extends State<IncrementDecrementButton> {
             height: 35,
             width: 35,
             decoration: BoxDecoration(
-                color: AppColors.primaryColor.withOpacity(0.75),
+                color: AppColors.themeColor.withOpacity(0.75),
                 borderRadius: BorderRadius.circular(8)),
             child: IconButton(
                 onPressed: _buttonController.decrement,
@@ -51,7 +51,7 @@ class _IncrementDecrementButtonState extends State<IncrementDecrementButton> {
             height: 35,
             width: 35,
             decoration: BoxDecoration(
-                color: AppColors.primaryColor.withOpacity(0.75),
+                color: AppColors.themeColor.withOpacity(0.75),
                 borderRadius: BorderRadius.circular(8)),
             child: IconButton(
               onPressed: _buttonController.increment,

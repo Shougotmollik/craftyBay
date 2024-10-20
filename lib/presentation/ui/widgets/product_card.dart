@@ -1,5 +1,6 @@
+
+import 'package:craftybay/data/models/product_model.dart';
 import 'package:craftybay/presentation/ui/screens/navigation_screen/product_details_screen.dart';
-import 'package:craftybay/presentation/ui/utils/assets_path.dart';
 import 'package:craftybay/presentation/ui/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -7,34 +8,37 @@ import 'package:get/get.dart';
 class ProductCard extends StatelessWidget {
   const ProductCard({
     super.key,
+    required this.product,
   });
+
+  final ProductModel product;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Get.to(()=>const ProductDetailsScreen());
+        Get.to(() => ProductDetailsScreen(productId: product.id!));
       },
       child: Card(
         color: Colors.white,
         elevation: 3,
         child: SizedBox(
-          width: 140,
+          width: 160,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                width: 140,
+                width: 160,
                 height: 100,
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  color: AppColors.primaryColor.withOpacity(0.1),
+                  color: AppColors.themeColor.withOpacity(0.1),
                   borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(8),
                     topRight: Radius.circular(8),
                   ),
-                  image: const DecorationImage(
-                      image: AssetImage(AssetsPath.shoeImage),
+                  image: DecorationImage(
+                      image: NetworkImage(product.image ?? ''),
                       fit: BoxFit.scaleDown),
                 ),
               ),
@@ -43,42 +47,42 @@ class ProductCard extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
-                      'New Year Special Shoe',
+                    Text(
+                      product.title ?? '',
                       maxLines: 1,
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontWeight: FontWeight.w500, color: Colors.black54),
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Text(
-                          '\$120',
-                          style: TextStyle(
+                        Text(
+                          '\$${product.price}',
+                          style: const TextStyle(
                               fontWeight: FontWeight.w500,
-                              color: AppColors.primaryColor),
+                              color: AppColors.themeColor),
                         ),
-                        const Wrap(
+                        Wrap(
                           crossAxisAlignment: WrapCrossAlignment.center,
                           children: [
-                            Icon(Icons.star, color: Colors.amber,size: 16,),
+                            const Icon(Icons.star, color: Colors.amber),
                             Text(
-                              '4.8',
-                              style: TextStyle(
+                              '${product.star}',
+                              style: const TextStyle(
                                   fontWeight: FontWeight.w500,
                                   color: Colors.black54),
                             ),
                           ],
                         ),
                         Card(
-                          color: AppColors.primaryColor,
+                          color: AppColors.themeColor,
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(4)),
                           child: const Padding(
-                            padding: EdgeInsets.all(2.0),
+                            padding: EdgeInsets.all(4.0),
                             child: Icon(
                               Icons.favorite_outline_rounded,
-                              size: 12,
+                              size: 16,
                               color: Colors.white,
                             ),
                           ),

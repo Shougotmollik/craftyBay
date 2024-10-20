@@ -1,11 +1,16 @@
+
 import 'package:craftybay/presentation/state_holders/bottom_nav_bar_controller.dart';
-import 'package:craftybay/presentation/state_holders/slider_list_controller.dart';
+import 'package:craftybay/presentation/state_holders/category_list_controller.dart';
+import 'package:craftybay/presentation/state_holders/new_product_list_controller.dart';
+import 'package:craftybay/presentation/state_holders/popular_product_list_controller.dart';
+import 'package:craftybay/presentation/state_holders/special_product_list_controller.dart';
 import 'package:craftybay/presentation/ui/utils/assets_path.dart';
 import 'package:craftybay/presentation/ui/widgets/app_bar_icon_button.dart';
+import 'package:craftybay/presentation/ui/widgets/centered_circular_progress_indicator.dart';
 import 'package:craftybay/presentation/ui/widgets/home_banner_slider.dart';
 import 'package:craftybay/presentation/ui/widgets/horizontal_category_list_view.dart';
 import 'package:craftybay/presentation/ui/widgets/horizontal_product_list_view.dart';
-import 'package:craftybay/presentation/ui/widgets/search_bar_text_form_filed.dart';
+import 'package:craftybay/presentation/ui/widgets/search_text_form_filed.dart';
 import 'package:craftybay/presentation/ui/widgets/section_header.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -20,32 +25,26 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
-  void initState() {
-    super.initState();
-    Get.find<SliderListController>().getSliderList();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _buildAppBar(),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Column(
             children: [
-              SearchBarTextFormField(
-                  textEditingController: TextEditingController()),
+              const SizedBox(height: 16),
+              SearchTextField(textEditingController: TextEditingController()),
               const SizedBox(height: 16),
               const HomeBannerSlider(),
               const SizedBox(height: 16),
               _buildCategoriesSection(),
+              _buildPopularProductsSection(),
               const SizedBox(height: 16),
-              _buildProductSection(),
+              _buildNewProductsSection(),
               const SizedBox(height: 16),
-              _buildSpecialSection(),
+              _buildSpecialProductsSection(),
               const SizedBox(height: 16),
-              _buildNewSection(),
             ],
           ),
         ),
@@ -53,67 +52,103 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
+  Widget _buildPopularProductsSection() {
+    return Column(
+      children: [
+        SectionHeader(
+          title: 'Popular',
+          onTap: () {},
+        ),
+        SizedBox(
+          height: 180,
+          child: GetBuilder<PopularProductListController>(
+              builder: (popularProductListController) {
+                return Visibility(
+                  visible: !popularProductListController.inProgress,
+                  replacement: const CenteredCircularProgressIndicator(),
+                  child: HorizontalProductListView(
+                    productList: popularProductListController.productList,
+                  ),
+                );
+              }
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildNewProductsSection() {
+    return Column(
+      children: [
+        SectionHeader(
+          title: 'New',
+          onTap: () {},
+        ),
+        SizedBox(
+          height: 180,
+          child: GetBuilder<NewProductListController>(
+              builder: (newProductListController) {
+                return Visibility(
+                  visible: !newProductListController.inProgress,
+                  replacement: const CenteredCircularProgressIndicator(),
+                  child: HorizontalProductListView(
+                    productList: newProductListController.productList,
+                  ),
+                );
+              }
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildSpecialProductsSection() {
+    return Column(
+      children: [
+        SectionHeader(
+          title: 'Special',
+          onTap: () {},
+        ),
+        SizedBox(
+          height: 180,
+          child: GetBuilder<SpecialProductListController>(
+              builder: (specialProductListController) {
+                return Visibility(
+                  visible: !specialProductListController.inProgress,
+                  replacement: const CenteredCircularProgressIndicator(),
+                  child: HorizontalProductListView(
+                    productList: specialProductListController.productList,
+                  ),
+                );
+              }
+          ),
+        ),
+      ],
+    );
+  }
+
   Widget _buildCategoriesSection() {
     return Column(
       children: [
         SectionHeader(
+          title: 'Categories',
           onTap: () {
-            Get.find<BottomNavBarController>().changeCategory();
+            Get.find<BottomNavBarController>().selectCategory();
           },
-          title: "All Categories",
         ),
         const SizedBox(height: 8),
-        const SizedBox(
-          height: 100,
-          child: HorizontalCategoriesListView(),
-        ),
-      ],
-    );
-  }
-
-  Widget _buildProductSection() {
-    return Column(
-      children: [
-        SectionHeader(
-          onTap: () {},
-          title: "Popular",
-        ),
-        const SizedBox(height: 8),
-        const SizedBox(
-          height: 180,
-          child: HorizontalProductListView(),
-        ),
-      ],
-    );
-  }
-
-  Widget _buildSpecialSection() {
-    return Column(
-      children: [
-        SectionHeader(
-          onTap: () {},
-          title: "Special",
-        ),
-        const SizedBox(height: 8),
-        const SizedBox(
-          height: 180,
-          child: HorizontalProductListView(),
-        ),
-      ],
-    );
-  }
-
-  Widget _buildNewSection() {
-    return Column(
-      children: [
-        SectionHeader(
-          onTap: () {},
-          title: "New",
-        ),
-        const SizedBox(height: 8),
-        const SizedBox(
-          height: 180,
-          child: HorizontalProductListView(),
+        SizedBox(
+          height: 120,
+          child: GetBuilder<CategoryListController>(
+              builder: (categoryListController) {
+                return Visibility(
+                  visible: !categoryListController.inProgress,
+                  replacement: const CenteredCircularProgressIndicator(),
+                  child: HorizontalCategoryListView(
+                    categoryList: categoryListController.categoryList,
+                  ),
+                );
+              }),
         ),
       ],
     );
@@ -121,21 +156,22 @@ class _HomeScreenState extends State<HomeScreen> {
 
   AppBar _buildAppBar() {
     return AppBar(
+      backgroundColor: Colors.white,
       title: SvgPicture.asset(AssetsPath.appLogoNav),
       actions: [
         AppBarIconButton(
-          onTap: () {},
           iconData: Icons.person,
+          onTap: () {},
         ),
         const SizedBox(width: 8),
         AppBarIconButton(
-          onTap: () {},
           iconData: Icons.call,
+          onTap: () {},
         ),
         const SizedBox(width: 8),
         AppBarIconButton(
+          iconData: Icons.notifications_active_outlined,
           onTap: () {},
-          iconData: Icons.notifications_on_rounded,
         ),
       ],
     );

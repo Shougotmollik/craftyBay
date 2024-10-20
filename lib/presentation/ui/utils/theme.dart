@@ -3,52 +3,50 @@ import 'package:flutter/material.dart';
 
 class AppTheme {
   static ThemeData lightTheme = ThemeData(
-    colorSchemeSeed: AppColors.primaryColor,
-    scaffoldBackgroundColor: Colors.white,
-    progressIndicatorTheme: const ProgressIndicatorThemeData(
-      color: AppColors.primaryColor,
-    ),
-    appBarTheme:  const AppBarTheme(
-      backgroundColor: Colors.white,
-      titleTextStyle: TextStyle(
-        fontWeight: FontWeight.w500,
-        color: Colors.black54,
-        fontSize: 22,
-      )
-    ),
-    textTheme: const TextTheme(
-      headlineLarge: TextStyle(fontSize: 32, fontWeight: FontWeight.w600),
-    ),
-    inputDecorationTheme: InputDecorationTheme(
-      border: _outlineInputBorder(),
-      enabledBorder: _outlineInputBorder(),
-      focusedBorder: _outlineInputBorder(),
-      errorBorder: _outlineInputBorder(Colors.red),
-      hintStyle: const TextStyle(
-        fontWeight: FontWeight.w400,
+      colorSchemeSeed: AppColors.themeColor,
+      scaffoldBackgroundColor: Colors.white,
+      progressIndicatorTheme: const ProgressIndicatorThemeData(
+        color: AppColors.themeColor,
       ),
-      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-    ),
-    elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ElevatedButton.styleFrom(
-          backgroundColor: AppColors.primaryColor,
-          foregroundColor: Colors.white,
-          padding: const EdgeInsets.symmetric(vertical: 12),
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-          textStyle: const TextStyle(fontSize: 16),
-          fixedSize: const Size.fromWidth(double.maxFinite)),
-    ),
-    textButtonTheme: TextButtonThemeData(
-      style: TextButton.styleFrom(
-          foregroundColor: AppColors.primaryColor,
-          textStyle: const TextStyle(fontSize: 16)),
-    ),
-  );
+      textTheme: const TextTheme(
+        headlineLarge: TextStyle(fontSize: 32, fontWeight: FontWeight.w600),
+      ),
+      inputDecorationTheme: InputDecorationTheme(
+        border: _outlineInputBorder(),
+        enabledBorder: _outlineInputBorder(),
+        focusedBorder: _outlineInputBorder(),
+        errorBorder: _outlineInputBorder(Colors.red),
+        hintStyle: const TextStyle(
+          fontWeight: FontWeight.w400,
+        ),
+        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      ),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+            backgroundColor: AppColors.themeColor,
+            foregroundColor: Colors.white,
+            padding: const EdgeInsets.symmetric(vertical: 12),
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+            textStyle: const TextStyle(fontSize: 16),
+            fixedSize: const Size.fromWidth(double.maxFinite)),
+      ),
+      textButtonTheme: TextButtonThemeData(
+        style: TextButton.styleFrom(
+            foregroundColor: AppColors.themeColor,
+            textStyle: const TextStyle(fontSize: 16)),
+      ),
+      appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.white,
+          titleTextStyle: TextStyle(
+              color: Colors.black54,
+              fontSize: 20,
+              fontWeight: FontWeight.w500)));
 }
 
 OutlineInputBorder _outlineInputBorder([Color? color]) {
   return OutlineInputBorder(
-    borderSide: BorderSide(color: color ?? AppColors.primaryColor, width: 1),
+    borderSide: BorderSide(color: color ?? AppColors.themeColor, width: 1),
     borderRadius: BorderRadius.circular(8),
   );
 }

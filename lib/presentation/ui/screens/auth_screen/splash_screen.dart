@@ -1,3 +1,5 @@
+
+import 'package:craftybay/presentation/state_holders/auth_controller.dart';
 import 'package:craftybay/presentation/ui/screens/navigation_screen/main_bottom_nav_bar_screen.dart';
 import 'package:craftybay/presentation/ui/widgets/app_logo_widgets.dart';
 import 'package:flutter/material.dart';
@@ -13,9 +15,8 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   Future<void> _moveToNextScreen() async {
     await Future.delayed(const Duration(seconds: 2));
-    if (mounted) {
-      Get.off(const MainBottomNavBarScreen());
-    }
+    await Get.find<AuthController>().getAccessToken();
+    Get.off(() => const MainBottomNavScreen());
   }
 
   @override
@@ -33,16 +34,14 @@ class _SplashScreenState extends State<SplashScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // ignore: prefer_const_constructors
               Spacer(),
-              AppLogoWidgets(),
+              AppLogoWidget(),
               Spacer(),
               CircularProgressIndicator(),
+              SizedBox(height: 16),
               Text(
-                "Version :1.0",
-                style: TextStyle(
-                  color: Colors.grey,
-                ),
+                'version 1.0.0',
+                style: TextStyle(color: Colors.grey),
               ),
             ],
           ),

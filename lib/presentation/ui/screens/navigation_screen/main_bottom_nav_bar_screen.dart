@@ -1,46 +1,67 @@
+
 import 'package:craftybay/presentation/state_holders/bottom_nav_bar_controller.dart';
+import 'package:craftybay/presentation/state_holders/category_list_controller.dart';
+import 'package:craftybay/presentation/state_holders/new_product_list_controller.dart';
+import 'package:craftybay/presentation/state_holders/popular_product_list_controller.dart';
+import 'package:craftybay/presentation/state_holders/slider_list_controller.dart';
+import 'package:craftybay/presentation/state_holders/special_product_list_controller.dart';
 import 'package:craftybay/presentation/ui/screens/navigation_screen/cart_screen.dart';
-import 'package:craftybay/presentation/ui/screens/navigation_screen/categories_screen.dart';
+import 'package:craftybay/presentation/ui/screens/navigation_screen/categories_list_screen.dart';
 import 'package:craftybay/presentation/ui/screens/navigation_screen/home_screen.dart';
 import 'package:craftybay/presentation/ui/screens/navigation_screen/wish_list_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class MainBottomNavBarScreen extends StatefulWidget {
-  const MainBottomNavBarScreen({super.key});
+class MainBottomNavScreen extends StatefulWidget {
+  const MainBottomNavScreen({super.key});
 
   @override
-  State<MainBottomNavBarScreen> createState() => _MainBottomNavBarScreenState();
+  State<MainBottomNavScreen> createState() => _MainBottomNavScreenState();
 }
 
-class _MainBottomNavBarScreenState extends State<MainBottomNavBarScreen> {
+class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
   final BottomNavBarController _navBarController =
-      Get.find<BottomNavBarController>();
+  Get.find<BottomNavBarController>();
 
   final List<Widget> _screens = const [
     HomeScreen(),
-    CategoriesScreen(),
+    CategoryListScreen(),
     CartScreen(),
     WishListScreen(),
   ];
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      Get.find<SliderListController>().getSliderList();
+      Get.find<CategoryListController>().getCategoryList();
+      Get.find<NewProductListController>().getNewProductList();
+      Get.find<PopularProductListController>().getPopularProductList();
+      Get.find<SpecialProductListController>().getSpecialProductList();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return GetBuilder<BottomNavBarController>(builder: (_) {
       return Scaffold(
         body: _screens[_navBarController.selectedIndex],
         bottomNavigationBar: NavigationBar(
-          height: 72,
-          backgroundColor: Colors.white54,
           selectedIndex: _navBarController.selectedIndex,
           onDestinationSelected: _navBarController.changeIndex,
           destinations: const [
-            NavigationDestination(icon: Icon(Icons.home_outlined), label: "Home"),
+            NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
             NavigationDestination(
-                icon: Icon(Icons.category_outlined), label: "Category"),
+              icon: Icon(Icons.category_outlined),
+              label: 'Category',
+            ),
             NavigationDestination(
-                icon: Icon(Icons.shopping_basket_outlined), label: "Cart"),
+              icon: Icon(Icons.shopping_cart),
+              label: 'Cart',
+            ),
             NavigationDestination(
-                icon: Icon(Icons.card_giftcard_rounded), label: "Wish"),
+                icon: Icon(Icons.favorite_border), label: 'Wishlist'),
           ],
         ),
       );

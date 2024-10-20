@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 class AppBarIconButton extends StatelessWidget {
   const AppBarIconButton({
-    super.key, required this.onTap, required this.iconData,
+    super.key,
+    required this.onTap,
+    required this.iconData,
   });
 
   final VoidCallback onTap;
@@ -13,13 +15,14 @@ class AppBarIconButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: CircleAvatar(
-          radius: 18,
-          backgroundColor: Colors.grey.shade200,
-          child:  Icon(
-            iconData,
-            color: Colors.grey,
-            size: 22,
-          )),
+        radius: 16,
+        backgroundColor: Colors.grey.shade200,
+        child: Icon(
+          iconData,
+          color: Colors.grey,
+          size: 18,
+        ),
+      ),
     );
   }
 }
