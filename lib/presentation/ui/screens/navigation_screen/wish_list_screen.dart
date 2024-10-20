@@ -1,4 +1,3 @@
-
 import 'package:craftybay/presentation/state_holders/bottom_nav_bar_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -35,6 +34,8 @@ class _WishListScreenState extends State<WishListScreen> {
             crossAxisSpacing: 8,
           ),
           itemBuilder: (context, index) {
+            return null;
+            //TODO: Api problem here !!
             // return const ProductCard();
           },
         ),

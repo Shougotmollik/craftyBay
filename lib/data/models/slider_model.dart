@@ -10,13 +10,13 @@ class SliderModel {
 
   SliderModel(
       {this.id,
-        this.title,
-        this.shortDes,
-        this.price,
-        this.image,
-        this.productId,
-        this.createdAt,
-        this.updatedAt});
+      this.title,
+      this.shortDes,
+      this.price,
+      this.image,
+      this.productId,
+      this.createdAt,
+      this.updatedAt});
 
   SliderModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];

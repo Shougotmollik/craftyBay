@@ -1,4 +1,3 @@
-
 import 'package:craftybay/presentation/state_holders/auth_controller.dart';
 import 'package:craftybay/presentation/ui/screens/navigation_screen/main_bottom_nav_bar_screen.dart';
 import 'package:craftybay/presentation/ui/widgets/app_logo_widgets.dart';

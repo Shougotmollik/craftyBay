@@ -68,7 +68,7 @@ class _ReviewScreenState extends State<ReviewScreen> {
         backgroundColor: AppColors.themeColor,
         shape: const CircleBorder(),
         onPressed: () {
-          Get.to(()=>const CreateReviewScreen());
+          Get.to(() => const CreateReviewScreen());
         },
         child: const Icon(
           Icons.add,

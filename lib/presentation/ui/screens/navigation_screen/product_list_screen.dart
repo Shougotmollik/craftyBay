@@ -1,4 +1,3 @@
-
 import 'package:craftybay/data/models/category_model.dart';
 import 'package:craftybay/presentation/state_holders/product_list_by_category_controller.dart';
 import 'package:craftybay/presentation/ui/widgets/centered_circular_progress_indicator.dart';
@@ -31,39 +30,39 @@ class _ProductListScreenState extends State<ProductListScreen> {
       ),
       body: GetBuilder<ProductListByCategoryController>(
           builder: (productListByCategoryController) {
-            if (productListByCategoryController.inProgress) {
-              return const CenteredCircularProgressIndicator();
-            }
+        if (productListByCategoryController.inProgress) {
+          return const CenteredCircularProgressIndicator();
+        }
 
-            if (productListByCategoryController.errorMessage != null) {
-              return Center(
-                child: Text(productListByCategoryController.errorMessage!),
-              );
-            }
+        if (productListByCategoryController.errorMessage != null) {
+          return Center(
+            child: Text(productListByCategoryController.errorMessage!),
+          );
+        }
 
-            if (productListByCategoryController.productList.isEmpty) {
-              return const Center(
-                child: Text('Empty product list !'),
-              );
-            }
+        if (productListByCategoryController.productList.isEmpty) {
+          return const Center(
+            child: Text('Empty product list !'),
+          );
+        }
 
-            return GridView.builder(
-              itemCount: productListByCategoryController.productList.length,
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3,
-                childAspectRatio: 1,
-                mainAxisSpacing: 2,
-                crossAxisSpacing: 2,
+        return GridView.builder(
+          itemCount: productListByCategoryController.productList.length,
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 3,
+            childAspectRatio: 1,
+            mainAxisSpacing: 2,
+            crossAxisSpacing: 2,
+          ),
+          itemBuilder: (context, index) {
+            return FittedBox(
+              child: ProductCard(
+                product: productListByCategoryController.productList[index],
               ),
-              itemBuilder: (context, index) {
-                return FittedBox(
-                  child: ProductCard(
-                    product: productListByCategoryController.productList[index],
-                  ),
-                );
-              },
             );
-          }),
+          },
+        );
+      }),
     );
   }
 }

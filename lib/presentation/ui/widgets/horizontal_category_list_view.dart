@@ -1,11 +1,11 @@
-
 import 'package:craftybay/data/models/category_model.dart';
 import 'package:craftybay/presentation/ui/widgets/category_card.dart';
 import 'package:flutter/material.dart';
 
 class HorizontalCategoryListView extends StatelessWidget {
   const HorizontalCategoryListView({
-    super.key, required this.categoryList,
+    super.key,
+    required this.categoryList,
   });
 
   final List<CategoryModel> categoryList;
@@ -24,4 +24,3 @@ class HorizontalCategoryListView extends StatelessWidget {
     );
   }
 }
-

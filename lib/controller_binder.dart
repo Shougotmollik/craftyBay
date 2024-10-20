@@ -1,4 +1,3 @@
-
 import 'package:craftybay/data/services/network_caller.dart';
 import 'package:craftybay/presentation/state_holders/add_to_cart_controller.dart';
 import 'package:craftybay/presentation/state_holders/auth_controller.dart';

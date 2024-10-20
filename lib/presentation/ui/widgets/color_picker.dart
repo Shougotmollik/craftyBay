@@ -35,9 +35,9 @@ class _ColorPickerState extends State<ColorPicker> {
                 radius: 16,
                 child: _selectedColor == item
                     ? const Icon(
-                  Icons.check,
-                  color: Colors.white,
-                )
+                        Icons.check,
+                        color: Colors.white,
+                      )
                     : null,
               ),
             );

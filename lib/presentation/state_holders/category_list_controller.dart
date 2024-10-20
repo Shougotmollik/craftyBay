@@ -1,4 +1,3 @@
-
 import 'package:craftybay/data/models/category_list_model.dart';
 import 'package:craftybay/data/models/category_model.dart';
 import 'package:craftybay/data/models/network_response.dart';
@@ -24,7 +23,7 @@ class CategoryListController extends GetxController {
     _inProgress = true;
     update();
     final NetworkResponse response =
-    await Get.find<NetworkCaller>().getRequest(url: Urls.categoryListUrl);
+        await Get.find<NetworkCaller>().getRequest(url: Urls.categoryListUrl);
     if (response.isSuccess) {
       isSuccess = true;
       _errorMessage = null;

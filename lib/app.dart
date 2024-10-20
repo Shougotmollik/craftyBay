@@ -9,7 +9,7 @@ class CraftyBayApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  GetMaterialApp(
+    return GetMaterialApp(
       themeMode: ThemeMode.system,
       theme: AppTheme.lightTheme,
       initialBinding: ControllerBinder(),

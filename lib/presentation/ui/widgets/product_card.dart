@@ -1,4 +1,3 @@
-
 import 'package:craftybay/data/models/product_model.dart';
 import 'package:craftybay/presentation/ui/screens/navigation_screen/product_details_screen.dart';
 import 'package:craftybay/presentation/ui/utils/colors.dart';

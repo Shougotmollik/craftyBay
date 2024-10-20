@@ -1,4 +1,3 @@
-
 import 'package:craftybay/data/models/network_response.dart';
 import 'package:craftybay/data/models/product_details_model.dart';
 import 'package:craftybay/data/services/network_caller.dart';
@@ -27,7 +26,8 @@ class ProductDetailsController extends GetxController {
     );
 
     if (response.isSuccess) {
-      _productModel = ProductDetailsModel.fromJson(response.responseData['data'][0]);
+      _productModel =
+          ProductDetailsModel.fromJson(response.responseData['data'][0]);
       isSuccess = true;
       _errorMessage = null;
     } else {

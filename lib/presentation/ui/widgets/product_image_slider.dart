@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 
 class ProductImageSlider extends StatefulWidget {
   const ProductImageSlider({
-    super.key, required this.sliderUrls,
+    super.key,
+    required this.sliderUrls,
   });
 
   final List<String> sliderUrls;
@@ -34,8 +35,7 @@ class _ProductImageSliderState extends State<ProductImageSlider> {
                 return Container(
                   decoration: BoxDecoration(
                       color: Colors.grey.shade100,
-                      image: DecorationImage(
-                          image: NetworkImage(imageUrl))),
+                      image: DecorationImage(image: NetworkImage(imageUrl))),
                 );
               },
             );

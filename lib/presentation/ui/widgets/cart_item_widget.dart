@@ -1,5 +1,3 @@
-
-
 import 'package:craftybay/presentation/ui/utils/assets_path.dart';
 import 'package:craftybay/presentation/ui/utils/colors.dart';
 import 'package:craftybay/presentation/ui/widgets/increment_decrement_button.dart';
@@ -80,7 +78,7 @@ class CartItemWidget extends StatelessWidget {
           '\$100',
           style: textTheme.titleMedium?.copyWith(color: AppColors.themeColor),
         ),
-       const IncrementDecrementButton()
+        const IncrementDecrementButton()
       ],
     );
   }

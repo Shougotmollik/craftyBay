@@ -59,9 +59,7 @@ class _HomeBannerSliderState extends State<HomeBannerSlider> {
                 color: AppColors.themeColor,
                 borderRadius: BorderRadius.circular(8),
                 image: DecorationImage(
-                    image: NetworkImage(slider.image ?? ''),
-                    fit: BoxFit.cover
-                ),
+                    image: NetworkImage(slider.image ?? ''), fit: BoxFit.cover),
               ),
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -72,11 +70,10 @@ class _HomeBannerSliderState extends State<HomeBannerSlider> {
                     Text(
                       slider.price ?? '',
                       textAlign: TextAlign.center,
-                      style:
-                      Theme.of(context).textTheme.titleLarge?.copyWith(
-                        color: Colors.black,
-                        fontWeight: FontWeight.w600,
-                      ),
+                      style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                            color: Colors.black,
+                            fontWeight: FontWeight.w600,
+                          ),
                     ),
                     const SizedBox(height: 16),
                     SizedBox(

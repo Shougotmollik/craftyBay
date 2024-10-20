@@ -1,5 +1,3 @@
-
-
 import 'slider_model.dart';
 
 class SliderListModel {

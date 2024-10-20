@@ -1,4 +1,3 @@
-
 import 'package:craftybay/presentation/state_holders/otp_verification_controller.dart';
 import 'package:craftybay/presentation/state_holders/read_profile_controller.dart';
 import 'package:craftybay/presentation/ui/screens/auth_screen/complete_profile_screen.dart';
@@ -23,9 +22,9 @@ class OtpVerificationScreen extends StatefulWidget {
 class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
   final TextEditingController _otpTEController = TextEditingController();
   final OtpVerificationController _otpVerificationController =
-  Get.find<OtpVerificationController>();
+      Get.find<OtpVerificationController>();
   final ReadProfileController _readProfileController =
-  Get.find<ReadProfileController>();
+      Get.find<ReadProfileController>();
 
   @override
   Widget build(BuildContext context) {
@@ -75,16 +74,15 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
               const SizedBox(height: 24),
               GetBuilder<OtpVerificationController>(
                   builder: (otpVerificationController) {
-                    return Visibility(
-                      visible: !otpVerificationController.inProgress,
-                      replacement: const CenteredCircularProgressIndicator(),
-                      child: ElevatedButton(
-                        onPressed: _onTapNextButton,
-                        child: const Text('Next'),
-                      ),
-                    );
-                  }
-              ),
+                return Visibility(
+                  visible: !otpVerificationController.inProgress,
+                  replacement: const CenteredCircularProgressIndicator(),
+                  child: ElevatedButton(
+                    onPressed: _onTapNextButton,
+                    child: const Text('Next'),
+                  ),
+                );
+              }),
               const SizedBox(height: 16),
               RichText(
                 text: TextSpan(

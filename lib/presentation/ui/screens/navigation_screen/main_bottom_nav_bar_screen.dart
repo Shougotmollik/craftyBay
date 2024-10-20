@@ -1,4 +1,3 @@
-
 import 'package:craftybay/presentation/state_holders/bottom_nav_bar_controller.dart';
 import 'package:craftybay/presentation/state_holders/category_list_controller.dart';
 import 'package:craftybay/presentation/state_holders/new_product_list_controller.dart';
@@ -21,7 +20,7 @@ class MainBottomNavScreen extends StatefulWidget {
 
 class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
   final BottomNavBarController _navBarController =
-  Get.find<BottomNavBarController>();
+      Get.find<BottomNavBarController>();
 
   final List<Widget> _screens = const [
     HomeScreen(),

@@ -1,4 +1,3 @@
-
 import 'package:craftybay/data/models/category_model.dart';
 import 'package:craftybay/presentation/ui/screens/navigation_screen/product_list_screen.dart';
 import 'package:craftybay/presentation/ui/utils/colors.dart';
@@ -18,8 +17,7 @@ class CategoryCard extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         Get.to(
-              () =>
-              ProductListScreen(category: categoryModel),
+          () => ProductListScreen(category: categoryModel),
         );
       },
       child: Column(

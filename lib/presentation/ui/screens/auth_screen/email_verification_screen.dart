@@ -1,4 +1,3 @@
-
 import 'package:craftybay/presentation/state_holders/email_verification_controller.dart';
 import 'package:craftybay/presentation/ui/screens/auth_screen/otp_verification_screen.dart';
 import 'package:craftybay/presentation/ui/utils/snack_message.dart';
@@ -19,7 +18,7 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
   final TextEditingController _emailTEController = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final EmailVerificationController _emailVerificationController =
-  Get.find<EmailVerificationController>();
+      Get.find<EmailVerificationController>();
 
   @override
   Widget build(BuildContext context) {
@@ -62,16 +61,15 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
                 const SizedBox(height: 16),
                 GetBuilder<EmailVerificationController>(
                     builder: (emailVerificationController) {
-                      return Visibility(
-                        visible: !emailVerificationController.inProgress,
-                        replacement: const CenteredCircularProgressIndicator(),
-                        child: ElevatedButton(
-                          onPressed: _onTapNextButton,
-                          child: const Text('Next'),
-                        ),
-                      );
-                    }
-                ),
+                  return Visibility(
+                    visible: !emailVerificationController.inProgress,
+                    replacement: const CenteredCircularProgressIndicator(),
+                    child: ElevatedButton(
+                      onPressed: _onTapNextButton,
+                      child: const Text('Next'),
+                    ),
+                  );
+                }),
               ],
             ),
           ),
@@ -89,7 +87,7 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
         .verifyEmail(_emailTEController.text.trim());
     if (result) {
       Get.to(
-            () => OtpVerificationScreen(
+        () => OtpVerificationScreen(
           email: _emailTEController.text.trim(),
         ),
       );

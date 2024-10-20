@@ -1,5 +1,3 @@
-
-
 import 'package:craftybay/data/models/product_details_model.dart';
 import 'package:craftybay/presentation/state_holders/add_to_cart_controller.dart';
 import 'package:craftybay/presentation/state_holders/auth_controller.dart';
@@ -42,25 +40,25 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
       ),
       body: GetBuilder<ProductDetailsController>(
           builder: (productDetailsController) {
-            if (productDetailsController.inProgress) {
-              return const CenteredCircularProgressIndicator();
-            }
+        if (productDetailsController.inProgress) {
+          return const CenteredCircularProgressIndicator();
+        }
 
-            if (productDetailsController.errorMessage != null) {
-              return Center(
-                child: Text(productDetailsController.errorMessage!),
-              );
-            }
+        if (productDetailsController.errorMessage != null) {
+          return Center(
+            child: Text(productDetailsController.errorMessage!),
+          );
+        }
 
-            return Column(
-              children: [
-                Expanded(
-                  child: _buildProductDetails(productDetailsController.product!),
-                ),
-                _buildPriceAndAddToCartSection(productDetailsController.product!)
-              ],
-            );
-          }),
+        return Column(
+          children: [
+            Expanded(
+              child: _buildProductDetails(productDetailsController.product!),
+            ),
+            _buildPriceAndAddToCartSection(productDetailsController.product!)
+          ],
+        );
+      }),
     );
   }
 
@@ -90,15 +88,6 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                 const SizedBox(height: 4),
                 _buildRatingAndReviewSection(product),
                 const SizedBox(height: 8),
-                // ColorPicker(
-                //   colors: const [
-                //     Colors.red,
-                //     Colors.green,
-                //     Colors.yellow,
-                //     Colors.black,
-                //   ],
-                //   onColorSelected: (color) {},
-                // ),
                 SizePicker(
                   sizes: colors,
                   onSizeSelected: (String selectedColor) {
@@ -222,18 +211,17 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
           ),
           SizedBox(
             width: 140,
-            child: GetBuilder<AddToCartController>(
-                builder: (addToCartController) {
-                  return Visibility(
-                    visible: !addToCartController.inProgress,
-                    replacement: const CenteredCircularProgressIndicator(),
-                    child: ElevatedButton(
-                      onPressed: _onTapAddToCart,
-                      child: const Text('Add To Cart'),
-                    ),
-                  );
-                }
-            ),
+            child:
+                GetBuilder<AddToCartController>(builder: (addToCartController) {
+              return Visibility(
+                visible: !addToCartController.inProgress,
+                replacement: const CenteredCircularProgressIndicator(),
+                child: ElevatedButton(
+                  onPressed: _onTapAddToCart,
+                  child: const Text('Add To Cart'),
+                ),
+              );
+            }),
           )
         ],
       ),

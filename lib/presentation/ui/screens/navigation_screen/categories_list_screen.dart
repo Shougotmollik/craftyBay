@@ -1,4 +1,3 @@
-
 import 'package:craftybay/presentation/state_holders/bottom_nav_bar_controller.dart';
 import 'package:craftybay/presentation/state_holders/category_list_controller.dart';
 import 'package:craftybay/presentation/ui/widgets/category_card.dart';
@@ -30,27 +29,27 @@ class CategoryListScreen extends StatelessWidget {
           },
           child: GetBuilder<CategoryListController>(
               builder: (categoryListController) {
-                if (categoryListController.inProgress) {
-                  return const CenteredCircularProgressIndicator();
-                } else if (categoryListController.errorMessage != null) {
-                  return Center(
-                    child: Text(categoryListController.errorMessage!),
-                  );
-                }
+            if (categoryListController.inProgress) {
+              return const CenteredCircularProgressIndicator();
+            } else if (categoryListController.errorMessage != null) {
+              return Center(
+                child: Text(categoryListController.errorMessage!),
+              );
+            }
 
-                return GridView.builder(
-                  itemCount: categoryListController.categoryList.length,
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 4,
-                    childAspectRatio: 0.75,
-                  ),
-                  itemBuilder: (context, index) {
-                    return CategoryCard(
-                      categoryModel: categoryListController.categoryList[index],
-                    );
-                  },
+            return GridView.builder(
+              itemCount: categoryListController.categoryList.length,
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 4,
+                childAspectRatio: 0.75,
+              ),
+              itemBuilder: (context, index) {
+                return CategoryCard(
+                  categoryModel: categoryListController.categoryList[index],
                 );
-              }),
+              },
+            );
+          }),
         ),
       ),
     );

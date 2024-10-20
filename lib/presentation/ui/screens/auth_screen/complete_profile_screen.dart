@@ -5,8 +5,7 @@ class CompleteProfileScreen extends StatefulWidget {
   const CompleteProfileScreen({super.key});
 
   @override
-  State<CompleteProfileScreen> createState() =>
-      _CompleteProfileScreenState();
+  State<CompleteProfileScreen> createState() => _CompleteProfileScreenState();
 }
 
 class _CompleteProfileScreenState extends State<CompleteProfileScreen> {

@@ -1,4 +1,3 @@
-
 import 'package:craftybay/presentation/state_holders/bottom_nav_bar_controller.dart';
 import 'package:craftybay/presentation/ui/utils/colors.dart';
 import 'package:craftybay/presentation/ui/widgets/cart_item_widget.dart';

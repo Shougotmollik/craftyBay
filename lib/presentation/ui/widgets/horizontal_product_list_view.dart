@@ -1,13 +1,9 @@
-
 import 'package:craftybay/data/models/product_model.dart';
 import 'package:craftybay/presentation/ui/widgets/product_card.dart';
 import 'package:flutter/material.dart';
 
 class HorizontalProductListView extends StatelessWidget {
-  const HorizontalProductListView({
-    super.key,
-    required this.productList
-  });
+  const HorizontalProductListView({super.key, required this.productList});
 
   final List<ProductModel> productList;
 
