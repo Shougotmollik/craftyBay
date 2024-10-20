@@ -5,13 +5,16 @@ class BottomNavBarController extends GetxController {
 
   int get selectedIndex => _selectedIndex;
 
-  void changeIndex(int index){
-    _selectedIndex=index;
+  void changeIndex(int index) {
+    _selectedIndex = index;
     update();
   }
-  void changeCategory(){
+
+  void selectCategory() {
     changeIndex(1);
-  }void backToHome(){
+  }
+
+  void backToHome() {
     changeIndex(0);
   }
 }
