@@ -1,10 +1,7 @@
 class AssetsPath {
+  static const String _images = 'assets/images';
 
-//   All Logo here
-static const String appLogo="assets/logos/logo.svg";
-static const String appLogoNav="assets/logos/logo_nav.svg";
-
-// All Images
-
-static const String shoeImage="assets/images/shoe.png";
+  static const String appLogo = '$_images/logo.svg';
+  static const String appLogoNav = '$_images/logo_nav.svg';
+  static const String dummyProductImg = '$_images/shoe.png';
 }
