@@ -1,4 +1,4 @@
-import 'package:craftybay/constants/app_color.dart';
+import 'package:craftybay/utils/app_color.dart';
 import 'package:flutter/material.dart';
 
 class CenterCircularProgressIndicator extends StatelessWidget {

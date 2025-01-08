@@ -1,6 +1,6 @@
+import 'package:craftybay/route/route_names.dart';
+import 'package:craftybay/route/routes.dart';
 import 'package:craftybay/theme/theme.dart';
-import 'package:craftybay/views/screens/auth/splash_screen.dart';
-import 'package:craftybay/views/screens/main_nav_bar/create_review.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -11,7 +11,10 @@ class CraftyBayApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       theme: lightTheme,
-      home: const CreateReview(),
+      getPages: Routes.pages,
+      initialRoute: RouteNames.splashScreen,
+      defaultTransition: Transition.noTransition,
+      useInheritedMediaQuery: true,
     );
   }
 }
