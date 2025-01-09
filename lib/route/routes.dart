@@ -4,6 +4,7 @@ import 'package:craftybay/views/screens/auth_screen/email_verification_screen.da
 import 'package:craftybay/views/screens/auth_screen/otp_verification_screen.dart';
 import 'package:craftybay/views/screens/auth_screen/splash_screen.dart';
 import 'package:craftybay/views/screens/navigation_screen/home_screen.dart';
+import 'package:craftybay/views/screens/navigation_screen/main_navigation_screen.dart';
 
 import 'package:get/get.dart';
 
@@ -12,6 +13,10 @@ class Routes {
     GetPage(
       name: RouteNames.splashScreen,
       page: () => const SplashScreen(),
+    ),
+    GetPage(
+      name: RouteNames.mainNavigationScreen,
+      page: () => const MainNavigationScreen(),
     ),
     GetPage(
       name: RouteNames.homeScreen,

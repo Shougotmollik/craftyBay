@@ -1,3 +1,4 @@
+import 'package:craftybay/controller_binder.dart';
 import 'package:craftybay/route/route_names.dart';
 import 'package:craftybay/route/routes.dart';
 import 'package:craftybay/theme/theme.dart';
@@ -15,6 +16,7 @@ class CraftyBayApp extends StatelessWidget {
       initialRoute: RouteNames.splashScreen,
       defaultTransition: Transition.noTransition,
       useInheritedMediaQuery: true,
+      initialBinding: ControllerBinder(),
     );
   }
 }
