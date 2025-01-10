@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
 
-class SearchTextField extends StatelessWidget {
+class SearchTextField extends StatefulWidget {
   const SearchTextField({
     super.key,
   });
 
   @override
+  State<SearchTextField> createState() => _SearchTextFieldState();
+}
+
+final TextEditingController searchTEController = TextEditingController();
+
+class _SearchTextFieldState extends State<SearchTextField> {
+  @override
   Widget build(BuildContext context) {
-    final TextEditingController searchTEController = TextEditingController();
     return Container(
       height: 42,
       decoration: BoxDecoration(

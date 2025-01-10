@@ -8,4 +8,12 @@ class BottomNavBarController extends GetxController {
     _selectedIndex = index;
     update();
   }
+
+  void selectCategoriesScreen() {
+    changeIndex(1);
+  }
+
+  void selectHomeScreen() {
+    changeIndex(0);
+  }
 }

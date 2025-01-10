@@ -5,4 +5,5 @@ class RouteNames {
   static String emailVerificationScreen = '/emailVerificationScreen';
   static String otpVerificationScreen = '/otpVerificationScreen';
   static String completeProfileScreen = '/completeProfileScreen';
+  static String categoriesScreen = '/categoriesScreen';
 }
