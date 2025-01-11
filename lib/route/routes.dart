@@ -3,9 +3,9 @@ import 'package:craftybay/views/screens/auth_screen/complete_profile_screen.dart
 import 'package:craftybay/views/screens/auth_screen/email_verification_screen.dart';
 import 'package:craftybay/views/screens/auth_screen/otp_verification_screen.dart';
 import 'package:craftybay/views/screens/auth_screen/splash_screen.dart';
-import 'package:craftybay/views/screens/navigation_screen/categories_screen.dart';
 import 'package:craftybay/views/screens/navigation_screen/home_screen.dart';
 import 'package:craftybay/views/screens/navigation_screen/main_navigation_screen.dart';
+import 'package:craftybay/views/screens/navigation_screen/product_details_screen.dart';
 
 import 'package:get/get.dart';
 
@@ -36,8 +36,8 @@ class Routes {
       page: () => const CompleteProfileScreen(),
     ),
     GetPage(
-      name: RouteNames.categoriesScreen,
-      page: () => const CategoriesScreen(),
+      name: RouteNames.productDetailsScreen,
+      page: () => const ProductDetailsScreen(),
     )
   ];
 }

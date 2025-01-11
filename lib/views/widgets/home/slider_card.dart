@@ -1,8 +1,8 @@
 import 'package:craftybay/utils/app_color.dart';
 import 'package:flutter/material.dart';
 
-class SliderCard extends StatelessWidget {
-  const SliderCard({
+class HomeSliderCard extends StatelessWidget {
+  const HomeSliderCard({
     super.key,
   });
 

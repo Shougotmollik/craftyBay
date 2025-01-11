@@ -1,6 +1,4 @@
-import 'package:craftybay/controllers/bottom_nav_bar_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({
@@ -14,14 +12,14 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       leading: IconButton(
-          onPressed: () {
-            Get.find<BottomNavBarController>().selectHomeScreen();
-          },
-          icon: const Icon(Icons.arrow_back_ios_new_rounded)),
+        onPressed: onTap,
+        icon: const Icon(Icons.arrow_back_ios_new_rounded),
+      ),
       title: Text(
         appBarTitle,
         style: const TextStyle(
           fontWeight: FontWeight.w500,
+          fontSize: 18,
         ),
       ),
     );
