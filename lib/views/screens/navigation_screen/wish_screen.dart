@@ -24,7 +24,7 @@ class _WishScreenState extends State<WishScreen> {
               backToHome();
             }),
         body: Padding(
-          padding: const EdgeInsets.all(14.0),
+          padding: const EdgeInsets.symmetric(horizontal: 14.0, vertical: 4),
           child: GridView.builder(
             itemCount: 09,
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(

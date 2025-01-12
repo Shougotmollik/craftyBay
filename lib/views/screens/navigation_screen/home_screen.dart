@@ -1,4 +1,5 @@
 import 'package:craftybay/controllers/bottom_nav_bar_controller.dart';
+import 'package:craftybay/controllers/screen_refresh_controller.dart';
 import 'package:craftybay/utils/app_assets_path.dart';
 import 'package:craftybay/utils/ui_helper/ui_helper.dart';
 import 'package:craftybay/views/widgets/home/home_screen_banner_slider.dart';
@@ -16,12 +17,15 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
+final ScreenRefreshController _refreshController = ScreenRefreshController();
+
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _buildAppBar(),
       body: SingleChildScrollView(
+        controller: _refreshController.scrollController,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
           child: Column(
@@ -86,8 +90,12 @@ class _HomeScreenState extends State<HomeScreen> {
 
   AppBar _buildAppBar() {
     return AppBar(
-      title:
-          UiHelper.customImage(imageSource: AppAssetsPath.logoNav, height: 30),
+      elevation: 2,
+      surfaceTintColor: Colors.transparent,
+      title: GestureDetector(
+          onTap: _refreshController.refreshAndScrollToTop,
+          child: UiHelper.customImage(
+              imageSource: AppAssetsPath.logoNav, height: 30)),
       actions: [
         IconButton(
             onPressed: () {},
